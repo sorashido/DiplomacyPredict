@@ -1,2 +1,12 @@
 # DiplomacyPredict
-diplomacy game 盤面の情報から勝率を予測
+predict number of supply center
+
+## Input
+- features of board(e.g. location of army)
+
+## Output
+- final results
+
+## Future
+- parameter tuning
+- add features of negotiation
