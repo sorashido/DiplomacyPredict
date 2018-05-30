@@ -68,6 +68,8 @@ df_new = pd.DataFrame(columns=["in","out1","out2"])
 # 特定の条件におけるデータ抽出
 i = 0
 for xyear in tyear:
+    if xyear < 1905:
+        continue;
     for xseason in tseason:
         for xcountry in tcountry:
             for xstate in tstate:
