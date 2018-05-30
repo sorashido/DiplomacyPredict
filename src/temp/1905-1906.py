@@ -70,6 +70,8 @@ i = 0
 for xyear in tyear:
     if xyear < 1905:
         continue;
+    if xyear > 1906:
+        break;
     for xseason in tseason:
         for xcountry in tcountry:
             for xstate in tstate:
@@ -87,7 +89,5 @@ for xyear in tyear:
                 out2 = data["location"].value_counts()
                 df2 = pd.DataFrame({'in': [inputs], 'out1': [out1], 'out2':[out2]})
                 df_new = df_new.append(df2)
-    if xyear > 1920:
-        break;
 
-df_new.to_csv("df_dataset.csv")
+df_new.to_csv("1905-1906.csv")

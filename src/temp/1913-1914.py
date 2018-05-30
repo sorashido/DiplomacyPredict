@@ -68,8 +68,10 @@ df_new = pd.DataFrame(columns=["in","out1","out2"])
 # 特定の条件におけるデータ抽出
 i = 0
 for xyear in tyear:
-    if xyear < 1905:
+    if xyear < 1913:
         continue;
+    if xyear > 1914:
+        break;
     for xseason in tseason:
         for xcountry in tcountry:
             for xstate in tstate:
@@ -87,7 +89,5 @@ for xyear in tyear:
                 out2 = data["location"].value_counts()
                 df2 = pd.DataFrame({'in': [inputs], 'out1': [out1], 'out2':[out2]})
                 df_new = df_new.append(df2)
-    if xyear > 1920:
-        break;
 
-df_new.to_csv("df_dataset.csv")
+df_new.to_csv("1913-1914.csv")
